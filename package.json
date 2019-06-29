@@ -1,0 +1,38 @@
+{
+  "name": "linarsy-brain-games",
+  "version": "1.0.0",
+  "description": "Проект для Хекслет, уровень 1",
+  "main": "index.js",
+  "bin": {
+    "brain-games": "dist/bin/brain-games.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "test": "test",
+    "build": "cross-env NODE_ENV=production babel src --out-dir dist --source-maps inline",
+    "prepublishOnly": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/linarsy/frontend-project-lvl1.git"
+  },
+  "keywords": [
+    "hexlet",
+    "brain-games"
+  ],
+  "author": "Ala Yakushava",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/linarsy/frontend-project-lvl1/issues"
+  },
+  "homepage": "https://github.com/linarsy/frontend-project-lvl1#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.4.4",
+    "@babel/core": "^7.4.5",
+    "@babel/node": "^7.4.5",
+    "@babel/preset-env": "^7.4.5",
+    "cross-env": "^5.2.0"
+  }
+}
