@@ -1,0 +1,25 @@
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.descriptionGame = exports.getAnswer = exports.getQuestion = void 0;
+
+var _utilites = require("../utilites");
+
+const positiveResponse = 'yes';
+const negativeResponse = 'no';
+const descriptionGame = `Answer "${positiveResponse}" if number even otherwise answer "${negativeResponse}".`;
+exports.descriptionGame = descriptionGame;
+
+const getQuestion = () => (0, _utilites.getRandomInt)();
+
+exports.getQuestion = getQuestion;
+
+const getAnswer = currentQuestion => {
+  const isEven = currentQuestion % 2 === 0;
+  return isEven ? positiveResponse : negativeResponse;
+};
+
+exports.getAnswer = getAnswer;
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uLy4uL3NyYy9nYW1lcy9ldmVuLmpzIl0sIm5hbWVzIjpbInBvc2l0aXZlUmVzcG9uc2UiLCJuZWdhdGl2ZVJlc3BvbnNlIiwiZGVzY3JpcHRpb25HYW1lIiwiZ2V0UXVlc3Rpb24iLCJnZXRBbnN3ZXIiLCJjdXJyZW50UXVlc3Rpb24iLCJpc0V2ZW4iXSwibWFwcGluZ3MiOiI7Ozs7Ozs7QUFBQTs7QUFFQSxNQUFNQSxnQkFBZ0IsR0FBRyxLQUF6QjtBQUNBLE1BQU1DLGdCQUFnQixHQUFHLElBQXpCO0FBQ0EsTUFBTUMsZUFBZSxHQUFJLFdBQVVGLGdCQUFpQixzQ0FBcUNDLGdCQUFpQixJQUExRzs7O0FBRUEsTUFBTUUsV0FBVyxHQUFHLE1BQU0sNkJBQTFCOzs7O0FBRUEsTUFBTUMsU0FBUyxHQUFJQyxlQUFELElBQXFCO0FBQ3JDLFFBQU1DLE1BQU0sR0FBR0QsZUFBZSxHQUFHLENBQWxCLEtBQXdCLENBQXZDO0FBQ0EsU0FBT0MsTUFBTSxHQUFHTixnQkFBSCxHQUFzQkMsZ0JBQW5DO0FBQ0QsQ0FIRCIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7IGdldFJhbmRvbUludCB9IGZyb20gJy4uL3V0aWxpdGVzJztcblxuY29uc3QgcG9zaXRpdmVSZXNwb25zZSA9ICd5ZXMnO1xuY29uc3QgbmVnYXRpdmVSZXNwb25zZSA9ICdubyc7XG5jb25zdCBkZXNjcmlwdGlvbkdhbWUgPSBgQW5zd2VyIFwiJHtwb3NpdGl2ZVJlc3BvbnNlfVwiIGlmIG51bWJlciBldmVuIG90aGVyd2lzZSBhbnN3ZXIgXCIke25lZ2F0aXZlUmVzcG9uc2V9XCIuYFxuXG5jb25zdCBnZXRRdWVzdGlvbiA9ICgpID0+IGdldFJhbmRvbUludCgpO1xuXG5jb25zdCBnZXRBbnN3ZXIgPSAoY3VycmVudFF1ZXN0aW9uKSA9PiB7XG4gIGNvbnN0IGlzRXZlbiA9IGN1cnJlbnRRdWVzdGlvbiAlIDIgPT09IDA7XG4gIHJldHVybiBpc0V2ZW4gPyBwb3NpdGl2ZVJlc3BvbnNlIDogbmVnYXRpdmVSZXNwb25zZTtcbn07XG5cbmV4cG9ydCB7IGdldFF1ZXN0aW9uLCBnZXRBbnN3ZXIsIGRlc2NyaXB0aW9uR2FtZSB9O1xuIl19

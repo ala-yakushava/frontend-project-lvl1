@@ -1,0 +1,13 @@
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.getRandomInt = void 0;
+const minNumber = 1;
+const maxNumber = 100;
+
+const getRandomInt = (min = minNumber, max = maxNumber) => Math.floor(Math.random() * (max - min)) + min;
+
+exports.getRandomInt = getRandomInt;
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uL3NyYy91dGlsaXRlcy5qcyJdLCJuYW1lcyI6WyJtaW5OdW1iZXIiLCJtYXhOdW1iZXIiLCJnZXRSYW5kb21JbnQiLCJtaW4iLCJtYXgiLCJNYXRoIiwiZmxvb3IiLCJyYW5kb20iXSwibWFwcGluZ3MiOiI7Ozs7OztBQUFBLE1BQU1BLFNBQVMsR0FBRyxDQUFsQjtBQUNBLE1BQU1DLFNBQVMsR0FBRyxHQUFsQjs7QUFFQSxNQUFNQyxZQUFZLEdBQUcsQ0FBQ0MsR0FBRyxHQUFHSCxTQUFQLEVBQWtCSSxHQUFHLEdBQUdILFNBQXhCLEtBQXNDSSxJQUFJLENBQUNDLEtBQUwsQ0FBV0QsSUFBSSxDQUFDRSxNQUFMLE1BQWlCSCxHQUFHLEdBQUdELEdBQXZCLENBQVgsSUFBMENBLEdBQXJHIiwic291cmNlc0NvbnRlbnQiOlsiY29uc3QgbWluTnVtYmVyID0gMTtcbmNvbnN0IG1heE51bWJlciA9IDEwMDtcblxuY29uc3QgZ2V0UmFuZG9tSW50ID0gKG1pbiA9IG1pbk51bWJlciwgbWF4ID0gbWF4TnVtYmVyKSA9PiBNYXRoLmZsb29yKE1hdGgucmFuZG9tKCkgKiAobWF4IC0gbWluKSkgKyBtaW47XG5cbmV4cG9ydCB7IGdldFJhbmRvbUludCB9OyJdfQ==
