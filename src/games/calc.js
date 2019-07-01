@@ -13,12 +13,10 @@ const getPuzzle = () => {
   const firstNumber = getRandomInt();
   const secondNumber = getRandomInt();
   const operator = operators[getRandomInt(0, operators.length)];
+  const currentQuestion = `${firstNumber} ${operator} ${secondNumber}`;
   const currentAnswer = calculate(firstNumber, secondNumber, operator);
 
-  return {
-    question: `${firstNumber} ${operator} ${secondNumber}`,
-    answer: currentAnswer,
-  };
+  return [currentQuestion, currentAnswer];
 };
 
 export { getPuzzle, descriptionGame };

@@ -5,7 +5,7 @@ const maxRepeat = 3;
 const startRepeat = 0;
 
 const playGame = (puzzle, repeat = startRepeat) => {
-  const { question, answer } = puzzle();
+  const [question, answer] = puzzle();
   const currentRepeat = repeat + 1;
   console.log(`Question: ${question}`);
   const actual = readlineSync.question('Your answer: ');

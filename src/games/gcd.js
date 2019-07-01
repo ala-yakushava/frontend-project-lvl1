@@ -10,12 +10,10 @@ const applyEuclid = (a, b) => {
 const getPuzzle = () => {
   const firstNumber = getRandomInt();
   const secondNumber = getRandomInt();
+  const currentQuestion = `${firstNumber} ${secondNumber}`;
   const currentAnswer = applyEuclid(firstNumber, secondNumber);
 
-  return {
-    question: `${firstNumber} ${secondNumber}`,
-    answer: currentAnswer,
-  };
+  return [currentQuestion, currentAnswer];
 };
 
 export { getPuzzle, descriptionGame };

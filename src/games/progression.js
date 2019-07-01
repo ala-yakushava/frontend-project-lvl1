@@ -15,11 +15,9 @@ const getPuzzle = () => {
   }
 
   const currentAnswer = arr.splice(skipIndex, 1, '..');
+  const currentQuestion = arr.join(' ');
 
-  return {
-    question: arr.join(' '),
-    answer: currentAnswer,
-  };
+  return [currentQuestion, currentAnswer];
 };
 
 export { getPuzzle, descriptionGame };

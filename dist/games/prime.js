@@ -1,0 +1,32 @@
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.descriptionGame = exports.getPuzzle = void 0;
+
+var _utilites = _interopRequireDefault(require("../utilites"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+const positiveResponse = 'yes';
+const negativeResponse = 'no';
+const descriptionGame = `Answer "${positiveResponse}" if given number is prime. Otherwise answer "${negativeResponse}".`;
+exports.descriptionGame = descriptionGame;
+
+const isPrime = number => {
+  for (let i = 2; i <= Math.sqrt(number); i += 1) {
+    if (number % i === 0) return false;
+  }
+
+  return true;
+};
+
+const getPuzzle = () => {
+  const currentQuestion = (0, _utilites.default)(2, 100);
+  const currentAnswer = isPrime(currentQuestion) ? positiveResponse : negativeResponse;
+  return [currentQuestion, currentAnswer];
+};
+
+exports.getPuzzle = getPuzzle;
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uLy4uL3NyYy9nYW1lcy9wcmltZS5qcyJdLCJuYW1lcyI6WyJwb3NpdGl2ZVJlc3BvbnNlIiwibmVnYXRpdmVSZXNwb25zZSIsImRlc2NyaXB0aW9uR2FtZSIsImlzUHJpbWUiLCJudW1iZXIiLCJpIiwiTWF0aCIsInNxcnQiLCJnZXRQdXp6bGUiLCJjdXJyZW50UXVlc3Rpb24iLCJjdXJyZW50QW5zd2VyIl0sIm1hcHBpbmdzIjoiOzs7Ozs7O0FBQUE7Ozs7QUFFQSxNQUFNQSxnQkFBZ0IsR0FBRyxLQUF6QjtBQUNBLE1BQU1DLGdCQUFnQixHQUFHLElBQXpCO0FBQ0EsTUFBTUMsZUFBZSxHQUFJLFdBQVVGLGdCQUFpQixpREFBZ0RDLGdCQUFpQixJQUFySDs7O0FBRUEsTUFBTUUsT0FBTyxHQUFJQyxNQUFELElBQVk7QUFDMUIsT0FBSyxJQUFJQyxDQUFDLEdBQUcsQ0FBYixFQUFnQkEsQ0FBQyxJQUFJQyxJQUFJLENBQUNDLElBQUwsQ0FBVUgsTUFBVixDQUFyQixFQUF3Q0MsQ0FBQyxJQUFJLENBQTdDLEVBQWdEO0FBQzlDLFFBQUlELE1BQU0sR0FBR0MsQ0FBVCxLQUFlLENBQW5CLEVBQXNCLE9BQU8sS0FBUDtBQUN2Qjs7QUFFRCxTQUFPLElBQVA7QUFDRCxDQU5EOztBQVFBLE1BQU1HLFNBQVMsR0FBRyxNQUFNO0FBQ3RCLFFBQU1DLGVBQWUsR0FBRyx1QkFBYSxDQUFiLEVBQWdCLEdBQWhCLENBQXhCO0FBQ0EsUUFBTUMsYUFBYSxHQUFHUCxPQUFPLENBQUNNLGVBQUQsQ0FBUCxHQUEyQlQsZ0JBQTNCLEdBQThDQyxnQkFBcEU7QUFFQSxTQUFPLENBQUNRLGVBQUQsRUFBa0JDLGFBQWxCLENBQVA7QUFDRCxDQUxEIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IGdldFJhbmRvbUludCBmcm9tICcuLi91dGlsaXRlcyc7XG5cbmNvbnN0IHBvc2l0aXZlUmVzcG9uc2UgPSAneWVzJztcbmNvbnN0IG5lZ2F0aXZlUmVzcG9uc2UgPSAnbm8nO1xuY29uc3QgZGVzY3JpcHRpb25HYW1lID0gYEFuc3dlciBcIiR7cG9zaXRpdmVSZXNwb25zZX1cIiBpZiBnaXZlbiBudW1iZXIgaXMgcHJpbWUuIE90aGVyd2lzZSBhbnN3ZXIgXCIke25lZ2F0aXZlUmVzcG9uc2V9XCIuYDtcblxuY29uc3QgaXNQcmltZSA9IChudW1iZXIpID0+IHtcbiAgZm9yIChsZXQgaSA9IDI7IGkgPD0gTWF0aC5zcXJ0KG51bWJlcik7IGkgKz0gMSkge1xuICAgIGlmIChudW1iZXIgJSBpID09PSAwKSByZXR1cm4gZmFsc2U7XG4gIH1cblxuICByZXR1cm4gdHJ1ZTtcbn07XG5cbmNvbnN0IGdldFB1enpsZSA9ICgpID0+IHtcbiAgY29uc3QgY3VycmVudFF1ZXN0aW9uID0gZ2V0UmFuZG9tSW50KDIsIDEwMCk7XG4gIGNvbnN0IGN1cnJlbnRBbnN3ZXIgPSBpc1ByaW1lKGN1cnJlbnRRdWVzdGlvbikgPyBwb3NpdGl2ZVJlc3BvbnNlIDogbmVnYXRpdmVSZXNwb25zZTtcblxuICByZXR1cm4gW2N1cnJlbnRRdWVzdGlvbiwgY3VycmVudEFuc3dlcl07XG59O1xuXG5leHBvcnQgeyBnZXRQdXp6bGUsIGRlc2NyaXB0aW9uR2FtZSB9O1xuIl19

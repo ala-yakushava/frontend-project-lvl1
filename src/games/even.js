@@ -10,10 +10,7 @@ const getPuzzle = () => {
   const currentQuestion = getRandomInt();
   const currentAnswer = isEven(currentQuestion) ? positiveResponse : negativeResponse;
 
-  return {
-    question: currentQuestion,
-    answer: currentAnswer,
-  };
+  return [currentQuestion, currentAnswer];
 };
 
 export { getPuzzle, descriptionGame };
