@@ -4,11 +4,16 @@ const positiveResponse = 'yes';
 const negativeResponse = 'no';
 const descriptionGame = `Answer "${positiveResponse}" if number even otherwise answer "${negativeResponse}".`;
 
-const getQuestion = () => getRandomInt();
+const isEven = number => number % 2 === 0;
 
-const getAnswer = (currentQuestion) => {
-  const isEven = currentQuestion % 2 === 0;
-  return isEven ? positiveResponse : negativeResponse;
+const getPuzzle = () => {
+  const currentQuestion = getRandomInt();
+  const currentAnswer = isEven(currentQuestion) ? positiveResponse : negativeResponse;
+
+  return {
+    question: currentQuestion,
+    answer: currentAnswer,
+  };
 };
 
-export { getQuestion, getAnswer, descriptionGame };
+export { getPuzzle, descriptionGame };

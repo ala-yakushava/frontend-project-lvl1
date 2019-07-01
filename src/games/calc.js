@@ -3,20 +3,22 @@ import getRandomInt from '../utilites';
 const descriptionGame = 'What is the result of the expression?';
 const operators = ['+', '-', '*'];
 
-const getQuestion = () => `${getRandomInt()} ${operators[getRandomInt(0, operators.length)]} ${getRandomInt()}`;
-
-const getAnswer = (currentQuestion) => {
-  const arr = currentQuestion.split(' ');
-  const firstNumber = +arr[0];
-  const secondNumber = +arr[2];
-  const operator = arr[1];
-  let result;
-
-  if (operator === '+') result = firstNumber + secondNumber;
-  else if (operator === '-') result = firstNumber - secondNumber;
-  else result = firstNumber * secondNumber;
-
-  return `${result}`;
+const calculate = (a, b, operator) => {
+  if (operator === '+') return a + b;
+  if (operator === '-') return a - b;
+  return a * b;
 };
 
-export { getQuestion, getAnswer, descriptionGame };
+const getPuzzle = () => {
+  const firstNumber = getRandomInt();
+  const secondNumber = getRandomInt();
+  const operator = operators[getRandomInt(0, operators.length)];
+  const currentAnswer = calculate(firstNumber, secondNumber, operator);
+
+  return {
+    question: `${firstNumber} ${operator} ${secondNumber}`,
+    answer: currentAnswer,
+  };
+};
+
+export { getPuzzle, descriptionGame };

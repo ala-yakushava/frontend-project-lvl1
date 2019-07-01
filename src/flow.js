@@ -3,35 +3,33 @@ import greet from '.';
 
 const maxRepeat = 3;
 const startRepeat = 0;
-let playerName;
 
-const playGame = (question, answer, repeat = startRepeat) => {
-  const currentQuestion = question();
-  console.log(`Question: ${currentQuestion}`);
-  const actual = readlineSync.question('Your answer: ');
-  const correctAnswer = answer(currentQuestion);
+const playGame = (puzzle, repeat = startRepeat) => {
+  const { question, answer } = puzzle();
   const currentRepeat = repeat + 1;
+  console.log(`Question: ${question}`);
+  const actual = readlineSync.question('Your answer: ');
 
-  if (actual !== correctAnswer) {
-    console.log(`'${actual}' is wrong answer ;(. Correct answer was '${correctAnswer}'.\nLet's try again, ${playerName}!`);
-    return null;
+  if (actual !== `${answer}`) {
+    console.log(`'${actual}' is wrong answer ;(. Correct answer was '${answer}'.`);
+    return false;
   }
 
   console.log('Correct!');
-
-  if (currentRepeat === maxRepeat) {
-    console.log(`Congratulations, ${playerName}!`);
-    return null;
-  }
-
-  return playGame(question, answer, currentRepeat);
+  if (currentRepeat === maxRepeat) return true;
+  return playGame(puzzle, currentRepeat);
 };
 
-const flow = (getQuestion, getAnswer, descriptionGame) => {
+const flow = (getPuzzle, descriptionGame) => {
   console.log(`Welcome to the Brain Games!\n${descriptionGame}\n`);
-  playerName = greet();
+  const playerName = greet();
+  const isWinner = playGame(getPuzzle);
 
-  return playGame(getQuestion, getAnswer);
+  if (isWinner) {
+    return console.log(`Congratulations, ${playerName}!`);
+  }
+
+  return console.log(`Let's try again, ${playerName}!`);
 };
 
 export default flow;
