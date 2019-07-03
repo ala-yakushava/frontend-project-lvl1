@@ -1,5 +1,4 @@
 #!/usr/bin/env node
-import { getPuzzle, descriptionGame } from '../games/calc';
-import flow from '../flow';
+import runGame from '../games/calc';
 
-flow(getPuzzle, descriptionGame);
+runGame();

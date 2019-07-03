@@ -1,22 +1,22 @@
 import getRandomInt from '../utilites';
+import flow from '..';
 
-const positiveResponse = 'yes';
-const negativeResponse = 'no';
-const descriptionGame = `Answer "${positiveResponse}" if given number is prime. Otherwise answer "${negativeResponse}".`;
+const descriptionGame = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
-const isPrime = (number) => {
-  for (let i = 2; i <= Math.sqrt(number); i += 1) {
-    if (number % i === 0) return false;
+const isPrime = (num) => {
+  if (num < 2) return false;
+  for (let i = 2; i <= Math.sqrt(num); i += 1) {
+    if (num % i === 0) return false;
   }
 
   return true;
 };
 
-const getPuzzle = () => {
+const createPrimeTask = () => {
   const currentQuestion = getRandomInt(2, 100);
-  const currentAnswer = isPrime(currentQuestion) ? positiveResponse : negativeResponse;
+  const currentAnswer = isPrime(currentQuestion) ? 'yes' : 'no';
 
   return [currentQuestion, currentAnswer];
 };
 
-export { getPuzzle, descriptionGame };
+export default () => flow(createPrimeTask, descriptionGame);

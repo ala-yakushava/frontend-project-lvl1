@@ -1,16 +1,15 @@
 import getRandomInt from '../utilites';
+import flow from '..';
 
-const positiveResponse = 'yes';
-const negativeResponse = 'no';
-const descriptionGame = `Answer "${positiveResponse}" if number even otherwise answer "${negativeResponse}".`;
+const descriptionGame = 'Answer "yes" if number even otherwise answer "no".';
 
 const isEven = number => number % 2 === 0;
 
-const getPuzzle = () => {
+const createEvenTask = () => {
   const currentQuestion = getRandomInt();
-  const currentAnswer = isEven(currentQuestion) ? positiveResponse : negativeResponse;
+  const currentAnswer = isEven(currentQuestion) ? 'yes' : 'no';
 
   return [currentQuestion, currentAnswer];
 };
 
-export { getPuzzle, descriptionGame };
+export default () => flow(createEvenTask, descriptionGame);

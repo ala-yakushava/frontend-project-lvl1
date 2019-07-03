@@ -1,23 +1,28 @@
 import getRandomInt from '../utilites';
+import flow from '..';
 
-const progressionLength = 10;
 const descriptionGame = 'What number is missing in the progression?';
 
-const getPuzzle = () => {
-  const firstNumber = getRandomInt();
-  const gapNumber = getRandomInt(1, 10);
-  const skipIndex = getRandomInt(1, 10);
-  let arr = [firstNumber];
+const getProgression = () => {
+  const start = getRandomInt();
+  const diff = getRandomInt(1, 10);
+  const progressionLength = 10;
+  let arr = [];
 
-  while (arr.length < progressionLength) {
-    const nextNumber = arr[arr.length - 1] + gapNumber;
-    arr = [...arr, nextNumber];
+  for (let i = 0; i < progressionLength; i += 1) {
+    arr = [...arr, start + diff * i];
   }
 
-  const currentAnswer = arr.splice(skipIndex, 1, '..');
-  const currentQuestion = arr.join(' ');
+  return arr;
+};
+
+const createProgressionTask = () => {
+  const progression = getProgression();
+  const skip = getRandomInt(1, 10);
+  const currentAnswer = progression.splice(skip, 1, '..');
+  const currentQuestion = progression.join(' ');
 
   return [currentQuestion, currentAnswer];
 };
 
-export { getPuzzle, descriptionGame };
+export default () => flow(createProgressionTask, descriptionGame);

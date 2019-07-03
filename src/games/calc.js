@@ -1,22 +1,33 @@
 import getRandomInt from '../utilites';
+import flow from '..';
 
 const descriptionGame = 'What is the result of the expression?';
 const operators = ['+', '-', '*'];
 
 const calculate = (a, b, operator) => {
-  if (operator === '+') return a + b;
-  if (operator === '-') return a - b;
-  return a * b;
+  let result;
+  switch (operator) {
+    case '+':
+      result = a + b;
+      break;
+    case '-':
+      result = a - b;
+      break;
+    default:
+      result = a * b;
+  }
+
+  return result;
 };
 
-const getPuzzle = () => {
-  const firstNumber = getRandomInt();
-  const secondNumber = getRandomInt();
+const createCalcTask = () => {
+  const num1 = getRandomInt();
+  const num2 = getRandomInt();
   const operator = operators[getRandomInt(0, operators.length)];
-  const currentQuestion = `${firstNumber} ${operator} ${secondNumber}`;
-  const currentAnswer = calculate(firstNumber, secondNumber, operator);
+  const currentQuestion = `${num1} ${operator} ${num2}`;
+  const currentAnswer = calculate(num1, num2, operator);
 
   return [currentQuestion, currentAnswer];
 };
 
-export { getPuzzle, descriptionGame };
+export default () => flow(createCalcTask, descriptionGame);

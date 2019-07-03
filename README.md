@@ -4,7 +4,7 @@
 
 ### **Установка**
 
-[![asciicast](https://asciinema.org/a/254685.svg)](https://asciinema.org/a/254685)
+[![asciicast](https://asciinema.org/a/255275.svg)](https://asciinema.org/a/255275)
 
 ### **brain-even**
 
