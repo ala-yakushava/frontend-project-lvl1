@@ -1,16 +1,16 @@
 import readlineSync from 'readline-sync';
 
-const lastLevel = 3;
+const startLevel = 1;
+const finishLevel = 3;
 
 const flow = (getLevelTask, descriptionGame) => {
   console.log('Welcome to the Brain Games!');
   console.log(`${descriptionGame}\n`);
   const playerName = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${playerName}!\n`);
-  let levelsCount = 0;
 
-  const inter = () => {
-    if (levelsCount === lastLevel) {
+  const iter = (currentLevel) => {
+    if (currentLevel === finishLevel) {
       console.log(`Congratulations, ${playerName}!`);
       return;
     }
@@ -26,11 +26,10 @@ const flow = (getLevelTask, descriptionGame) => {
     }
 
     console.log('Correct!');
-    levelsCount += 1;
-    inter();
+    iter(currentLevel + 1);
   };
 
-  inter();
+  iter(startLevel);
 };
 
 export default flow;
