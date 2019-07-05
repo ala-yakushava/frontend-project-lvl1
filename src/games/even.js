@@ -6,10 +6,10 @@ const descriptionGame = 'Answer "yes" if number even otherwise answer "no".';
 const isEven = number => number % 2 === 0;
 
 const createEvenTask = () => {
-  const currentQuestion = getRandomInt();
-  const currentAnswer = isEven(currentQuestion) ? 'yes' : 'no';
+  const question = getRandomInt();
+  const answer = isEven(question) ? 'yes' : 'no';
 
-  return [currentQuestion, currentAnswer];
+  return [question, answer];
 };
 
 export default () => flow(createEvenTask, descriptionGame);

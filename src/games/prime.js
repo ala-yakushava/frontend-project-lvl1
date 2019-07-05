@@ -13,10 +13,10 @@ const isPrime = (num) => {
 };
 
 const createPrimeTask = () => {
-  const currentQuestion = getRandomInt(2, 100);
-  const currentAnswer = isPrime(currentQuestion) ? 'yes' : 'no';
+  const question = getRandomInt(2);
+  const answer = isPrime(question) ? 'yes' : 'no';
 
-  return [currentQuestion, currentAnswer];
+  return [question, answer];
 };
 
 export default () => flow(createPrimeTask, descriptionGame);
