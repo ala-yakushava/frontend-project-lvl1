@@ -4,22 +4,22 @@ import flow from '..';
 const progressionLength = 10;
 const descriptionGame = 'What number is missing in the progression?';
 
-const getProgression = (start, diff) => {
-  let series = [];
-  for (let i = 0; i < progressionLength; i += 1) {
-    series = [...series, start + diff * i];
+const getProgression = (start, diff, length) => {
+  let progression = [];
+  for (let i = 0; i < length; i += 1) {
+    progression = [...progression, start + diff * i];
   }
 
-  return series;
+  return progression;
 };
 
 const createProgressionTask = () => {
   const start = getRandomInt();
   const diff = getRandomInt(1, 9);
   const skipIndex = getRandomInt(1, 9);
-  const series = getProgression(start, diff);
-  const answer = series.splice(skipIndex, 1, '..');
-  const question = series.join(' ');
+  const progression = getProgression(start, diff, progressionLength);
+  const answer = `${progression.splice(skipIndex, 1, '..')}`;
+  const question = progression.join(' ');
 
   return [question, answer];
 };

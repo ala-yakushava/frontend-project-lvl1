@@ -25,7 +25,7 @@ const createCalcTask = () => {
   const num2 = getRandomInt();
   const operator = operators[getRandomInt(0, operators.length - 1)];
   const question = `${num1} ${operator} ${num2}`;
-  const answer = calculate(num1, num2, operator);
+  const answer = `${calculate(num1, num2, operator)}`;
 
   return [question, answer];
 };

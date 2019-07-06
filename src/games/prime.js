@@ -13,7 +13,7 @@ const isPrime = (num) => {
 };
 
 const createPrimeTask = () => {
-  const question = getRandomInt(2);
+  const question = getRandomInt(2, 99);
   const answer = isPrime(question) ? 'yes' : 'no';
 
   return [question, answer];
