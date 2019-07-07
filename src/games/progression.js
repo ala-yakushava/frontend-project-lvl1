@@ -16,9 +16,9 @@ const getProgression = (start, diff, length) => {
 const createProgressionTask = () => {
   const start = getRandomInt();
   const diff = getRandomInt(1, 9);
-  const skipIndex = getRandomInt(1, 9);
+  const missingIndexElement = getRandomInt(1, progressionLength - 1);
   const progression = getProgression(start, diff, progressionLength);
-  const answer = `${progression.splice(skipIndex, 1, '..')}`;
+  const answer = `${progression.splice(missingIndexElement, 1, '..')}`;
   const question = progression.join(' ');
 
   return [question, answer];
